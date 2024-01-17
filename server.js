@@ -21,4 +21,9 @@ app.get('/*', (req, res) => {
     res.status(404).sendFile(path.join(__dirname, 'views', '404.html'))
 })
 
+// Route Handlers
+app.get('/hello(.html)?', (req, res, next) => {
+    console.log("Attempted to load hello.html")
+})
+
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
