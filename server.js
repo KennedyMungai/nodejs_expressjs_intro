@@ -18,7 +18,7 @@ app.get('/old-page(.html)?', (req, res) => {
 })
 
 app.get('/*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views', '404.html'))
+    res.status(404).sendFile(path.join(__dirname, 'views', '404.html'))
 })
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
